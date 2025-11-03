@@ -2,12 +2,12 @@ import os
 import tkinter as tk
 from tkinter import ttk, messagebox
 
-BG_COLOR = "#1e1e1e"
-FG_COLOR = "#dcdcdc"
-BTN_COLOR = "#2d2d2d"
-BTN_HOVER = "#3c3c3c"
-ACCENT = "#007acc"
-DATA_FILE = "crud.txt"
+BG_COLOR    = "#1e1e1e"
+FG_COLOR    = "#dcdcdc"
+BTN_COLOR   = "#2d2d2d"
+BTN_HOVER   = "#3c3c3c"
+ACCENT      = "#007acc"
+DATA_FILE   = "crud.txt"
 
 data = []
 
