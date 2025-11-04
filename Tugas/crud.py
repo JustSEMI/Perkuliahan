@@ -1,7 +1,7 @@
 import os
 
 data = []
-FILE_NAME = "crud.txt"
+FILE_NAME   = "crud.txt"
 
 def load_data():
     """Baca data dari file txt (jika ada)"""
