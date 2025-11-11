@@ -1,5 +1,6 @@
 from math import gcd
 
+"""" KELAS PERTAMA: Fraction (Logika Pecahan) """
 class Fraction:
     """
     class Fraction untuk merepresentasikan pecahan
@@ -68,62 +69,64 @@ class Fraction:
         """
         return f"{self.numerator}/{self.denominator}"
 
-    def original_str(self):
+    def original_str( self):
         """
         Tampilkan bentuk asli (sebelum disederhanakan)
         """
         return f"{self.original_num}/{self.original_den}"
 
+"""" KELAS KEDUA: FractionCalculatorApp (Aplikasi Kalkulator Pecahan) """
+class FractionCalculatorApp:
+    def main(self):
+        """
+        Fungsi utama pada kalkulator pecahan ini yang berbasis input dari user
+        dengan memakuskan dua pecahan dan melakukan operasi penjumlahan atau pengurangan
+        sesuai pilihan user.
+        Hasilnya akan ditampilkan dalam bentuk pecahan sederhana dan nilai desimal.
+        """
+        print("=== Kalkulator Pecahan ===")
+        try:
+            # Input user pecahan pertama
+            n1 = int(input("Masukkan pembilang pecahan pertama: "))
+            d1 = int(input("Masukkan penyebut pecahan pertama: "))
+            f1 = Fraction(n1, d1)
 
-def main():
-    """
-    Fungsi utama pada kalkulator pecahan ini yang berbasis input dari user
-    dengan memakuskan dua pecahan dan melakukan operasi penjumlahan atau pengurangan
-    sesuai pilihan user.
-    Hasilnya akan ditampilkan dalam bentuk pecahan sederhana dan nilai desimal.
-    """
-    print("=== Kalkulator Pecahan ===")
-    try:
-        # Input user pecahan pertama
-        n1 = int(input("Masukkan pembilang pecahan pertama: "))
-        d1 = int(input("Masukkan penyebut pecahan pertama: "))
-        f1 = Fraction(n1, d1)
+            # Input user pecahan kedua
+            n2 = int(input("\nMasukkan pembilang pecahan kedua: "))
+            d2 = int(input("Masukkan penyebut pecahan kedua: "))
+            f2 = Fraction(n2, d2)
 
-        # Input user pecahan kedua
-        n2 = int(input("\nMasukkan pembilang pecahan kedua: "))
-        d2 = int(input("Masukkan penyebut pecahan kedua: "))
-        f2 = Fraction(n2, d2)
+            # menampilkan bentuk asli & sederhana dari pecahan yang user inpu
+            print("\nPecahan pertama : ", f1.original_str(), "→ ", f1)
+            print("Pecahan kedua   : ", f2.original_str(), "→ ", f2)
 
-        # menampilkan bentuk asli & sederhana dari pecahan yang user inpu
-        print("\nPecahan pertama : ", f1.original_str(), "→ ", f1)
-        print("Pecahan kedua   : ", f2.original_str(), "→ ", f2)
+            # user di minta memilih operasi antara penjumlahan atau pengurangan
+            print("\nPilih operasi:")
+            print("1. Penjumlahan (+)")
+            print("2. Pengurangan (-)")
+            pilihan = input("Masukkan pilihan (1/2): ")
 
-        # user di minta memilih operasi antara penjumlahan atau pengurangan
-        print("\nPilih operasi:")
-        print("1. Penjumlahan (+)")
-        print("2. Pengurangan (-)")
-        pilihan = input("Masukkan pilihan (1/2): ")
+            # Melakukan operasi sesuai pilihan user
+            if pilihan == "1":
+                hasil = f1 + f2
+                operasi = "+"
+            elif pilihan == "2":
+                hasil = f1 - f2
+                operasi = "-"
+            else:
+                print("Pilihan tidak valid.")
+                return 
 
-        # Melakukan operasi sesuai pilihan user
-        if pilihan == "1":
-            hasil = f1 + f2
-            operasi = "+"
-        elif pilihan == "2":
-            hasil = f1 - f2
-            operasi = "-"
-        else:
-            print("Pilihan tidak valid.")
-            return
+            # Menampilkan hasil operasi
+            print("\n=== Hasil Operasi ===")
+            print(f"\nHasil: {f1} {operasi} {f2} = {hasil}")
+            print(f"Nilai desimal: {hasil.to_float():.4f}")
 
-        # Menampilkan hasil operasi
-        print("\n=== Hasil Operasi ===")
-        print(f"\nHasil: {f1} {operasi} {f2} = {hasil}")
-        print(f"Nilai desimal: {hasil.to_float():.4f}")
-
-    except ValueError as e:
-        print("Error:", e)
+        except ValueError as e:
+            print("Error:", e)
 
 # ini fungsi utama untuk menjalankan kalkulator pecahan
 # jika file ini dijalankan secara langsung
 if __name__ == "__main__":
-    main()
+    app = FractionCalculatorApp()
+    app.main()
