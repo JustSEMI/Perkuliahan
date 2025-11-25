@@ -28,8 +28,8 @@ ip_data = """
 192.100.100.1
 """
 
-final_flag = decode_ip_to_ascii(ip_data)
+final_decode = decode_ip_to_ascii(ip_data)
 
 print("=========================================")
-print(f"{final_flag}")
+print(f"{final_decode}")
 print("=========================================")
