@@ -1,0 +1,17 @@
+name: PlayerJoinChangelog
+main: me.projectvalakra.PlayerJoinChangelog.PlayerJoinChangelog
+version: 0.1b1
+api-version: 1.20
+author: bluezex
+description: Mengirim changelog server ke pemain saat mereka bergabung.
+
+commands:
+  changelog:
+    description: Reload changelog config file
+    usage: /changelog reload
+    permission: changelog.reload
+
+permissions:
+  changelog.reload:
+    description: Allows reloading the changelog config
+    default: op
